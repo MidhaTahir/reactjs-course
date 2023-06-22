@@ -1,0 +1,20 @@
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    
+  }
+
+  .custom-button:hover {
+    background-color: #45a049;
+  }
+  
+  .custom-button:focus {
+    outline: none;
+  }
+  
