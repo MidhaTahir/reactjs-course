@@ -1,7 +1,3 @@
-// --- Individual Importing Components --- //
-// import Card from "./components/Card/Card";
-// import FeedbackForm from "./components/FeedbackForm/FeedbackForm";
-
 // --- Importing Components using index.js --- //
 import { Card,FeedbackForm } from "./components";
 import "./App.css";
@@ -48,3 +44,13 @@ function App() {
 }
 
 export default App;
+
+/*
+Form Input & State
+Custom Button Component
+Real-Time Validation
+Rating Select Component
+Add Feedback
+Fade Animation With Framer Motion
+
+*/
