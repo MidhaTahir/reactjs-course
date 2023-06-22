@@ -1,0 +1,51 @@
+.feedback-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    opacity: 0;
+
+  }
+  .form-input {
+    margin-bottom: 10px;
+}
+  .feedback-container h1 {
+    text-align: center;
+  }
+  
+  .feedback-textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    resize: none;
+  }
+  select#feedback-rating {
+    margin-left: 10px;
+    padding: 0px 10px;
+}
+  
+  .custom-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #4caf50;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .confirmation-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .confirmation-container h2 {
+    color: #4caf50;
+  }
+  
+  .confirmation-container p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
