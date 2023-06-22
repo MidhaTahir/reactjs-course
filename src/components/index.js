@@ -1,5 +1,7 @@
 import Card from "./Card/Card";
-import FeedbackForm from "./FeedbackForm/FeedbackForm";
+import Counter from "./Counter/Counter";
+import FirstComponent from "./FirstComponent/FirstComponent";
+
 
 // Exporting all the components from this file
-export { Card ,FeedbackForm};
+export { Card, Counter, FirstComponent};

@@ -11,11 +11,9 @@ import "./card.css";
 
 import React from "react";
 
-const Card = ({ title, content, rating}) => {
+const Card = ({ title, content, rating }) => {
   return (
     <>
-      {/* 1. Conditional Rendering - Styling  */}
-
       <div className={`card`}>
         <h2 className="card-title">{title}</h2>
         {/* 
@@ -38,17 +36,21 @@ const CardContent = ({ content }) => {
 
 const CardRating = ({ rating }) => {
   return (
-    <span
-      className={`card-rating ${
-        rating >= 4
-          ? "best-feedback"
-          : rating < 4 && rating > 2
-          ? "good-feedback"
-          : "worst-feedback"
-      }`}
-    >
-      Rating: {rating}
-    </span>
+    <>
+      {/*  Conditional Rendering - Styling  */}
+
+      <span
+        className={`card-rating ${
+          rating >= 4
+            ? "best-feedback"
+            : rating < 4 && rating > 2
+            ? "good-feedback"
+            : "worst-feedback"
+        }`}
+      >
+        Rating: {rating}
+      </span>
+    </>
   );
 };
 
