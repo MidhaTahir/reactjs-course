@@ -1,9 +1,9 @@
 import React from "react";
 import "./Button.css";
 
-const Button = ({ onClick, children, }) => {
+const Button = ({ onClick, children, isSubmitting}) => {
   return (
-    <button className="custom-button" onClick={onClick}>
+    <button className="custom-button" onClick={onClick} disabled={isSubmitting}>
       {children}
     </button>
   );

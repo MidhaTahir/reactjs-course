@@ -1,13 +1,13 @@
 // --- Importing Components using index.js --- //
-import { Card,FeedbackForm } from "./components";
+import { Card,FeedbackForm,FormWithFormik } from "./components";
 import "./App.css";
 
 
 function App() {
   return (
     <>
-    {/* <Feedback/> */}
-    <FeedbackForm />
+    <FormWithFormik/>
+    {/* <FeedbackForm /> */}
       <div className="feedbacks">
         <h1 style={{ textAlign: "center" }}>Feedbacks</h1>
         <div className="all-cards">
