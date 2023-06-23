@@ -1,4 +1,5 @@
 import "./card.css";
+import { motion } from "framer-motion";
 
 /*
  * Points to be covered:
@@ -15,8 +16,12 @@ const Card = ({ title, content, rating}) => {
   return (
     <>
       {/* 1. Conditional Rendering - Styling  */}
-
-      <div className={`card`}>
+      <motion.div
+      className="card"
+      initial={{ opacity: 0 }} // Initial styles
+      animate={{ opacity: 1 }} // Animation styles
+      transition={{ duration: 1 }} // Animation duration
+    >
         <h2 className="card-title">{title}</h2>
         {/* 
         // One way to do it
@@ -26,7 +31,7 @@ const Card = ({ title, content, rating}) => {
         <CardContent content={content} />
 
         <CardRating rating={rating} />
-      </div>
+      </motion.div>
     </>
   );
 };
