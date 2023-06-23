@@ -10,7 +10,8 @@ import "./FirstComponent.css";
  * Props
  */
 
-const FirstComponent = ({ title }) => {
+const FirstComponent = (props) => {
+  const { title } = props;
   // inline styling
   const objStyle = {
     color: "red",

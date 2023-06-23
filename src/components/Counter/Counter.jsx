@@ -6,18 +6,20 @@ const Counter = () => {
 
   // Event handler for incrementing the count
   const handleIncrement = () => {
-    setCount(count + 1);
+    // setCount(count + 1);
+    setCount((prev) => prev + 1)
   };
 
   // Event handler for decrementing the count
   const handleDecrement = () => {
-    setCount(count - 1);
+    // setCount(count - 1);
+    setCount((prev) => prev - 1)
   };
 
   return (
     <>
       <h1>Counter</h1>
-      <h2>{count}</h2> {/* Feedback on the UI */}
+      <h2>{count}</h2>
       <button onClick={handleIncrement}>Increment</button>
       <button onClick={handleDecrement}>Decrement</button>
 
