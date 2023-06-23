@@ -1,44 +1,22 @@
 // --- Importing Components using index.js --- //
-import { Card,FeedbackForm,FormWithFormik } from "./components";
+import { Card,FeedbackForm,FormWithFormik,FormWithFormikContextApi } from "./components";
 import "./App.css";
+import Feedbacks from "./container/Feedbacks/Feedbacks";
+import { FormProvider } from './context/FormContext';
 
 
 function App() {
   return (
     <>
-    <FormWithFormik/>
+     <FormProvider>
+      <FormWithFormikContextApi/>
+    {/* <FormWithFormik/> */}
     {/* <FeedbackForm /> */}
       <div className="feedbacks">
         <h1 style={{ textAlign: "center" }}>Feedbacks</h1>
-        <div className="all-cards">
-          <Card
-            title={"Feeback 1"}
-            content={"This is my first card"}
-            rating={5}
-            maham={true}
-          />
-          <Card
-            title={"Feeback 2"}
-            content={"This is my first card"}
-            rating={4}
-          />
-          <Card
-            title={"Feeback 3"}
-            content={"This is my first card"}
-            rating={3}
-          />
-          <Card
-            title={"Feeback 4"}
-            content={"This is my first card"}
-            rating={3}
-          />
-          <Card
-            title={"Feeback 5"}
-            content={"This is my first card"}
-            rating={1}
-          />
-        </div>
+       <Feedbacks/>
       </div>
+      </FormProvider>
     </>
   );
 }
