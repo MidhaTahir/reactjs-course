@@ -1,9 +1,9 @@
 // --- Individual Importing Components --- //
-// import Card from "./components/Card/Card";
-// import FirstComponent from "./components/FirstComponent/FirstComponent";
+import Card from "./components/Card/Card";
+import FirstComponent from "./components/FirstComponent/FirstComponent";
 
 // --- Importing Components using index.js --- //
-import { FirstComponent, Card } from "./components";
+// import { FirstComponent, Card } from "./components";
 import "./App.css";
 
 /*
@@ -17,7 +17,36 @@ import "./App.css";
 
 // -- Parent Component -- //
 
+const feedbackList = [
+  {
+    title: "Feedback 1",
+    content: "This is my first card",
+    rating: "4",
+  },
+  {
+    title: "Feedback 2",
+    content: "This is my second card",
+    rating: "5",
+  },
+  {
+    title: "Feedback 3",
+    content: "This is my third card",
+    rating: "3",
+  },
+  {
+    title: "Feedback 4",
+    content: "This is my fourth card",
+    rating: "2",
+  },
+  {
+    title: "Feedback 5",
+    content: "This is my fifth card",
+    rating: "4",
+  },
+];
+
 function App() {
+  const title = "This is third class";
   return (
     // -- Fragment-- //
     <>
@@ -27,38 +56,23 @@ function App() {
       {/* // --- First Component --- // */}
       <FirstComponent
         // -- Props -- //
-        title={"This is my first React Component"}
+        title={title}
+        count={1}
+        lists={[1, 2, 3, 4, 5]}
+        obj={{ name: "Maham", age: 20 }}
+        func={() => console.log("Hello World")}
       />
 
       <div className="feedbacks">
         <h1 style={{ textAlign: "center" }}>Feedbacks</h1>
         <div className="all-cards">
-          <Card
-            title={"Feeback 1"}
-            content={"This is my first card"}
-            rating={5}
-            maham={true}
-          />
-          <Card
-            title={"Feeback 2"}
-            content={"This is my second feedback"}
-            rating={4}
-          />
-          <Card
-            title={"Feeback 3"}
-            content={"This is my third feedback"}
-            rating={3}
-          />
-          <Card
-            title={"Feeback 4"}
-            content={"This is my fourth feedback"}
-            rating={3}
-          />
-          <Card
-            title={"Feeback 5"}
-            content={"This is my first card"}
-            rating={1}
-          />
+          {feedbackList.map((item) => (
+            <Card
+              title={item.title}
+              content={item.content}
+              rating={item.rating}
+            />
+          ))}
         </div>
       </div>
     </>

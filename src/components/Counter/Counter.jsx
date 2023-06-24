@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Counter = () => {
   // State to track the feedback count
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(4);
 
   // Event handler for incrementing the count
   const handleIncrement = () => {
@@ -24,8 +24,8 @@ const Counter = () => {
       <button onClick={handleDecrement}>Decrement</button>
 
       {/* Alternative way to update the count using inline arrow functions */}
-      {/* <button onClick={() => setCount(count + 1)}>Increment</button>
-      <button onClick={() => setCount(count - 1)}>Decrement</button> */}
+      <button onClick={() => setCount(prev => prev + 1)}>Increment</button>
+      <button onClick={() => setCount(prev => prev - 1)}>Decrement</button>
     </>
   );
 };

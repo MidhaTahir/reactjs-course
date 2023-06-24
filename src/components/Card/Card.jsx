@@ -13,8 +13,7 @@ import React from "react";
 
 const Card = ({ title, content, rating }) => {
   return (
-    <>
-      <div className={`card`}>
+      <div className="card">
         <h2 className="card-title">{title}</h2>
         {/* 
         // One way to do it
@@ -25,7 +24,6 @@ const Card = ({ title, content, rating }) => {
 
         <CardRating rating={rating} />
       </div>
-    </>
   );
 };
 

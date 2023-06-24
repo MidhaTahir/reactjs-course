@@ -25,7 +25,7 @@ const FirstComponent = (props) => {
 
   return (
     <>
-      {/* -- 1. Internal Style -- */}
+      {/* -- 1. Inline Style -- */}
       <div style={objStyle}>
         <h1>Hello World</h1>
       </div>
