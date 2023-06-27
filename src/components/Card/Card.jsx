@@ -2,15 +2,15 @@ import React, { useContext } from "react";
 import "./card.css";
 import { motion } from "framer-motion";
 import { FormContext } from "../../context/FormContext";
+import { NavLink } from "react-router-dom";
 
-const Card = ({ index,title, feedback, rating }) => {
+
+const Card = ({ index, title, feedback, rating }) => {
   const { getCardData } = useContext(FormContext);
 
   const handleContentEdit = () => {
-    getCardData(true,index,{ title, feedback, rating });
+    getCardData(true, index, { title, feedback, rating });
   };
-
-  
 
   return (
     <>
@@ -29,7 +29,9 @@ const Card = ({ index,title, feedback, rating }) => {
           <button className="card-btn" onClick={handleContentEdit}>
             Edit
           </button>
-         
+          <NavLink to={`/feedback/${index}`} className="card-btn">
+            View
+          </NavLink>
         </div>
       </motion.div>
     </>
