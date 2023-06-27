@@ -44,3 +44,8 @@
 .others{
     border: 2px solid pink;
 }
+.card-all-btn{
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-between;
+}

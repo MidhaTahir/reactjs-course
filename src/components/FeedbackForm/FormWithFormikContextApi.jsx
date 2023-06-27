@@ -1,19 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Button from "../Button/Button";
 import "./FeedbackForm.css";
 import { motion } from "framer-motion";
-import { FormContext } from '../../context/FormContext';
+import { FormContext } from "../../context/FormContext";
 
 const FormWithFormikContextApi = () => {
-    
-    const { addFormInput } = useContext(FormContext);
+  const { addFormInput, cardData, editFormInput,IsEdit } = useContext(FormContext);
 
+  console.log("isedit", IsEdit)
   const initialValues = {
+    title: "",
     feedback: "",
     rating: "",
-    title:""
   };
 
   const validationSchema = Yup.object().shape({
@@ -28,37 +28,39 @@ const FormWithFormikContextApi = () => {
 
   const handleSubmit = (values, { resetForm }) => {
     // Handle form submission
-    console.log(values);
-    addFormInput(values);
+    if(IsEdit){
+      editFormInput(values)
+    } else{
+      addFormInput(values);
 
-    // Reset form
-    resetForm()
+    }
+    resetForm();
 
   };
 
   return (
     <motion.div
       className="feedback-container"
-      initial={{ opacity: 0 }} // Initial styles
-      animate={{ opacity: 1 }} // Animation styles
-      transition={{ duration: 1 }} // Animation duration
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
     >
       <h1>Feedback</h1>
       <Formik
-        initialValues={initialValues}
+        initialValues={IsEdit ? cardData:initialValues}
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
+        enableReinitialize={true}
       >
         <Form>
-        <div className="form-input">
-            <label htmlFor="title">Enter your Feedback Title</label> <br/>
+          <div className="form-input">
+            <label htmlFor="title">Enter your Feedback Title</label> <br />
             <Field
               className="feedback-title"
               as="input"
               id="title"
               name="title"
               placeholder="Enter your Feedback Title"
-              
             />
             <ErrorMessage name="title" component="div" className="error" />
           </div>
@@ -92,7 +94,9 @@ const FormWithFormikContextApi = () => {
             </Field>
             <ErrorMessage name="rating" component="div" className="error" />
           </div>
-          <Button type="submit">Submit</Button>{" "}
+          <Button type="submit">
+            {IsEdit? "Update": "Add"}
+            </Button>{" "}
         </Form>
       </Formik>
     </motion.div>
