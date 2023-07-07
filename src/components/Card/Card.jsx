@@ -31,6 +31,12 @@ const Card = ({ title, content, rating}) => {
         <CardContent content={content} />
 
         <CardRating rating={rating} />
+        <div className="btn">
+          <button className="card-btn">Edit</button>
+          <button className="card-btn">Delete</button>
+          <button className="card-btn">View</button>
+
+        </div>
       </motion.div>
     </>
   );
@@ -56,5 +62,6 @@ const CardRating = ({ rating }) => {
     </span>
   );
 };
+
 
 export default Card;

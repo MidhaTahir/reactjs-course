@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Card } from "../../components";
 import { FormContext } from '../../context/FormContext';
-
+import "./feedback.css";
 const Feedbacks = () => {
   const { formInputs } = useContext(FormContext);
 console.log(formInputs);
