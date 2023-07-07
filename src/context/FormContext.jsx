@@ -7,7 +7,6 @@ export const FormProvider = ({ children }) => {
   const [cardData, setCardData] = useState({});
   const [cardIndex, setCardIndex] = useState(null);
   const [IsEdit, setIsEdit] = useState(false);
-
   
   const addFormInput = (input) => {
     setFormInputs([...formInputs, input]);

@@ -1,6 +1,6 @@
 import React from "react";
 import { FormWithFormikContextApi } from "../components";
-import { Feedbacks } from "../container/index";
+import Feedbacks from "../components/Feedbacks/Feedbacks";
 
 const Feedback = () => {
   return (

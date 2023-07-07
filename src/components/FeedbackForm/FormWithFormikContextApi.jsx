@@ -2,14 +2,14 @@ import React, { useContext } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Button from "../Button/Button";
-import "./FeedbackForm.css";
 import { motion } from "framer-motion";
 import { FormContext } from "../../context/FormContext";
+import "./FeedbackForm.css";
 
 const FormWithFormikContextApi = () => {
+
   const { addFormInput, cardData, editFormInput,IsEdit } = useContext(FormContext);
 
-  console.log("isedit", IsEdit)
   const initialValues = {
     title: "",
     feedback: "",
@@ -32,10 +32,9 @@ const FormWithFormikContextApi = () => {
       editFormInput(values)
     } else{
       addFormInput(values);
-
     }
+    
     resetForm();
-
   };
 
   return (
