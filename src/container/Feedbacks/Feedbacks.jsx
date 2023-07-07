@@ -4,19 +4,19 @@ import { FormContext } from '../../context/FormContext';
 import "./feedback.css";
 const Feedbacks = () => {
   const { formInputs } = useContext(FormContext);
-console.log(formInputs);
   return (
     <>
       <div className="all-cards">
        
         {
           formInputs.length === 0 ? <h1 style={{textAlign:"center",color:"red"}}>No Feedbacks</h1> : 
-          formInputs.map((input) => {
+          formInputs.map((input,index) => {
             return (
               <Card
-                key={input.id}
+              index={index}
+                key={index}
                 title={input.title}
-                content={input.feedback}
+                feedback={input.feedback}
                 rating={input.rating}
               />
             );
