@@ -25,6 +25,10 @@ export const FormProvider = ({ children }) => {
     setIsEdit(false);
   };
 
+  const getSingleCardData = (index) => {
+    return formInputs[index];
+  }
+
   return (
     <FormContext.Provider
       value={{
@@ -34,6 +38,7 @@ export const FormProvider = ({ children }) => {
         cardData,
         editFormInput,
         IsEdit,
+        getSingleCardData 
       }}
     >
       {children}
