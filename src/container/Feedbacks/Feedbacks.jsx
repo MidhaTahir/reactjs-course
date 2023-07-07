@@ -18,6 +18,7 @@ const Feedbacks = () => {
                 title={input.title}
                 feedback={input.feedback}
                 rating={input.rating}
+                id={index}
               />
             );
           })

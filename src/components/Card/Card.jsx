@@ -6,8 +6,7 @@ import { NavLink } from "react-router-dom";
 
 
 const Card = ({ id, title, feedback, rating }) => {
-  const { getCardData, deleteFeedback} = useContext(FormContext);
-
+  const { getCardData} = useContext(FormContext);
   return (
     <>
       <motion.div
@@ -25,9 +24,7 @@ const Card = ({ id, title, feedback, rating }) => {
           <button className="card-btn" onClick={()=>getCardData(true, id, { title, feedback, rating })}>
             Edit
           </button>
-          <button className="card-btn" onClick={()=>deleteFeedback(id)}>
-            Delete
-          </button>
+          
           <NavLink to={`/feedback/${id}`} className="card-btn">
             View
           </NavLink>
