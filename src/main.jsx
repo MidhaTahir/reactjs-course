@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import { FormProvider } from "./context/FormContext";
-
 import { BrowserRouter } from "react-router-dom";
+import { FormProvider } from "./context/FormContext";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    
     <BrowserRouter>
-      <FormProvider>
+        <FormProvider>
         <App />
-      </FormProvider>
-    </BrowserRouter>
+        </FormProvider>
+      </BrowserRouter>
   </React.StrictMode>
 );

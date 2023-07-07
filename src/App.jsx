@@ -1,13 +1,14 @@
-
 import Configuration from "./configuration/Configuration";
+
 
 function App() {
   return (
     <>
-     <Configuration/>
+     
+          <Configuration/>
+      
     </>
   );
 }
 
 export default App;
-
