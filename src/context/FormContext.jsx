@@ -13,32 +13,13 @@ export const FormProvider = ({ children }) => {
     setFormInputs([...formInputs, input]);
   };
 
-  const getCardData = (isedit, index, input) => {
-    setCardData(input);
-    setCardIndex(index);
-    setIsEdit(isedit);
-  };
 
-  const editFormInput = (input) => {
-    formInputs[cardIndex] = input;
-    setFormInputs([...formInputs]);
-    setIsEdit(false);
-  };
-
-  const getSingleCardData = (index) => {
-    return formInputs[index];
-  }
 
   return (
     <FormContext.Provider
       value={{
         formInputs,
         addFormInput,
-        getCardData,
-        cardData,
-        editFormInput,
-        IsEdit,
-        getSingleCardData 
       }}
     >
       {children}

@@ -7,9 +7,8 @@ import { motion } from "framer-motion";
 import { FormContext } from "../../context/FormContext";
 
 const FormWithFormikContextApi = () => {
-  const { addFormInput, cardData, editFormInput,IsEdit } = useContext(FormContext);
+  const { addFormInput} = useContext(FormContext);
 
-  console.log("isedit", IsEdit)
   const initialValues = {
     title: "",
     feedback: "",
@@ -28,12 +27,10 @@ const FormWithFormikContextApi = () => {
 
   const handleSubmit = (values, { resetForm }) => {
     // Handle form submission
-    if(IsEdit){
-      editFormInput(values)
-    } else{
+    
       addFormInput(values);
 
-    }
+    
     resetForm();
 
   };
@@ -47,7 +44,7 @@ const FormWithFormikContextApi = () => {
     >
       <h1>Feedback</h1>
       <Formik
-        initialValues={IsEdit ? cardData:initialValues}
+        initialValues={initialValues}
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
         enableReinitialize={true}
@@ -95,7 +92,7 @@ const FormWithFormikContextApi = () => {
             <ErrorMessage name="rating" component="div" className="error" />
           </div>
           <Button type="submit">
-            {IsEdit? "Update": "Add"}
+            {"Add"}
             </Button>{" "}
         </Form>
       </Formik>
