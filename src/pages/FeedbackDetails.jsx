@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-import { FormContext } from "../context/FormContext";
 
 const FeedbackDetails = () => {
   const { feedbackId } = useParams();
@@ -8,7 +7,7 @@ const FeedbackDetails = () => {
   return (
     <>
       <h1>Feedback Details</h1>
-      <h4>{feedbackId}</h4>
+      <h4>We are on Feedback: {feedbackId}</h4>
     </>
   );
 };

@@ -10,7 +10,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="feedback" element={<Feedback />} />
-
         <Route path="feedback/:feedbackId" element={<FeedbackDetails />} />
       </Routes>
     </>

@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import "./card.css";
+import React from "react";
 import { motion } from "framer-motion";
-import { FormContext } from "../../context/FormContext";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import "./Card.css";
 
 const Card = ({ index, title, feedback, rating }) => {
+
   const navigate = useNavigate();
 
   return (
@@ -20,9 +20,11 @@ const Card = ({ index, title, feedback, rating }) => {
         <CardContent content={feedback} />
 
         <CardRating rating={rating} />
+        
         <div className="card-all-btn">
           <button onClick={() => navigate(`/feedback/${index}`)}>View</button>
         </div>
+
       </motion.div>
     </>
   );

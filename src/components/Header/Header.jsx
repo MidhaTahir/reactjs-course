@@ -1,10 +1,10 @@
-import './Header.css'; // Import CSS file
 import { NavLink } from 'react-router-dom';
+import './Header.css';
 
 function Header() {
   return (
     <header>
-      <h1>Feedback</h1>
+      <h1>React Router</h1>
       <nav>
       <ul>
         <li>
