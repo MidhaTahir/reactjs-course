@@ -19,11 +19,13 @@ const FeedbackForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(feedbackText.trim())
     if (feedbackText.trim() === "" || selectedRating === "") {
       alert("Please complete the form before submitting");
     } else {
       setSubmittedFeedback(true);
       setFeedbackText("");
+      setSelectedRating("");
       console.log(`Feedback: ${feedbackText}`);
       console.log(`Rating: ${selectedRating}`);
     }
@@ -32,9 +34,9 @@ const FeedbackForm = () => {
   return (
     <motion.div
       className="feedback-container"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      initial={{ opacity: 0 }}  // Initial styles
+      animate={{ opacity: 1 }}  // Animation styles
+      transition={{ duration: 1 }}  // Animation duration
     >
       {" "}
       <h1>Feedback</h1>
@@ -48,7 +50,7 @@ const FeedbackForm = () => {
             onChange={handleInputChange}
             placeholder="Enter your feedback"
             rows={4}
-            cols={50}
+            cols={45}
           />
         </div>
 
@@ -65,9 +67,7 @@ const FeedbackForm = () => {
             <option value="2">2 Star</option>
             <option value="3">3 Star</option>
             <option value="4">4 Star</option>
-            <option value="5" defaultChecked>
-              5 Star
-            </option>
+            <option value="5">5 Star</option>
           </select>
           
         </div>

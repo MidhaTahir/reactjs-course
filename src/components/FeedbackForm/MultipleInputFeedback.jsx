@@ -60,9 +60,7 @@ const MultipleInputFeedback = () => {
             <option value="2">2 Star</option>
             <option value="3">3 Star</option>
             <option value="4">4 Star</option>
-            <option value="5" defaultChecked>
-              5 Star
-            </option>
+            <option value="5">5 Star</option>
           </select>
         </div>
 
