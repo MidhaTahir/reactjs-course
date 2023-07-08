@@ -2,7 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const FeedbackDetails = () => {
-  const { feedbackId } = useParams();
+  const { feedbackId, name } = useParams();
+  console.log({name})
 
   return (
     <>

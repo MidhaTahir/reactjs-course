@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Home, About, Feedback, FeedbackDetails } from "./pages";
-import { Header } from "./components/";
+import { Header } from "./components"
 
 function App() {
   return (
