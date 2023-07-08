@@ -1,9 +1,9 @@
 import React, { createContext, useState } from "react";
 
-export const FormContext = createContext();
+export const CounterContext = createContext();
 
-export const FormProvider = ({ children }) => {
-  const [count, setCount] = useState(4);
+export const CounterProvider = ({ children }) => {
+  const [count, setCount] = useState(0);
 
   const handleIncrement = () => {
     setCount((prev) => prev + 1);
@@ -13,7 +13,7 @@ export const FormProvider = ({ children }) => {
     setCount((prev) => prev - 1);
   };
   return (
-    <FormContext.Provider
+    <CounterContext.Provider
       value={{
         count,
         handleIncrement,
@@ -21,6 +21,6 @@ export const FormProvider = ({ children }) => {
       }}
     >
       {children}
-    </FormContext.Provider>
+    </CounterContext.Provider>
   );
 };
