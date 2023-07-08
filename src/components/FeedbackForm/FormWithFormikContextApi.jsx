@@ -8,7 +8,7 @@ import "./FeedbackForm.css";
 
 const FormWithFormikContextApi = () => {
 
-  const { addFormInput, cardData, editFormInput,IsEdit } = useContext(FormContext);
+  const { addFormInput, cardData, editFormInput, IsEdit } = useContext(FormContext);
 
   const initialValues = {
     title: "",
@@ -33,7 +33,7 @@ const FormWithFormikContextApi = () => {
     } else{
       addFormInput(values);
     }
-    
+
     resetForm();
   };
 
@@ -46,7 +46,7 @@ const FormWithFormikContextApi = () => {
     >
       <h1>Feedback</h1>
       <Formik
-        initialValues={IsEdit ? cardData:initialValues}
+        initialValues={IsEdit ? cardData : initialValues}
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
         enableReinitialize={true}

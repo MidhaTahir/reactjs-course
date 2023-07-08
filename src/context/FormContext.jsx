@@ -9,7 +9,7 @@ export const FormProvider = ({ children }) => {
   const [IsEdit, setIsEdit] = useState(false);
   
   const addFormInput = (input) => {
-    setFormInputs([...formInputs, input]);
+    setFormInputs((prev) => ([...prev, input]));
   };
 
   const getCardData = (isedit, index, input) => {
@@ -19,8 +19,11 @@ export const FormProvider = ({ children }) => {
   };
 
   const editFormInput = (input) => {
-    formInputs[cardIndex] = input;
-    setFormInputs([...formInputs]);
+    setFormInputs((prevFormInputs) => {
+      const updatedFormInputs = [...prevFormInputs];
+      updatedFormInputs[cardIndex] = input;
+      return updatedFormInputs;
+    });
     setIsEdit(false);
   };
 
