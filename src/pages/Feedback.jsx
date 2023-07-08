@@ -1,18 +1,10 @@
-import React from "react";
-import { FormWithFormikContextApi } from "../components";
-import Feedbacks from "../components/Feedbacks/Feedbacks";
+import React from 'react'
+import { FeedbackCard } from '../components'
 
 const Feedback = () => {
   return (
-    <>
-      <FormWithFormikContextApi />
+    <><FeedbackCard /></>
+  )
+}
 
-      <div className="feedbacks">
-        <h1 style={{ textAlign: "center" }}>Feedbacks</h1>
-        <Feedbacks />
-      </div>
-    </>
-  );
-};
-
-export default Feedback;
+export default Feedback

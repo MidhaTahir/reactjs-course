@@ -1,16 +1,15 @@
-import React from "react";
+import React from 'react'
 import { useParams } from "react-router-dom";
 
 const FeedbackDetails = () => {
-  const { feedbackId, name } = useParams();
-  console.log({name})
+  const { feedbackId } = useParams();
 
   return (
-    <>
-      <h1>Feedback Details</h1>
-      <h4>We are on Feedback: {feedbackId}</h4>
-    </>
-  );
-};
+    <div>
+        <h1>Feedback Details</h1>
+        <h4>We are on Feedback: {feedbackId}</h4>
+    </div>
+  )
+}
 
-export default FeedbackDetails;
+export default FeedbackDetails

@@ -4,4 +4,4 @@ import Feedback from "./Feedback";
 import FeedbackDetails from "./FeedbackDetails";
 
 
-export { Home, About, Feedback, FeedbackDetails  };
+export { Home, About, Feedback, FeedbackDetails };
