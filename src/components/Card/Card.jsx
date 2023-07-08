@@ -2,11 +2,11 @@ import React, { useContext } from "react";
 import "./card.css";
 import { motion } from "framer-motion";
 import { FormContext } from "../../context/FormContext";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const Card = ({ index, title, feedback, rating }) => {
-  const navigate = useNavigate();
 
+const Card = ({ id, title, feedback, rating }) => {
+  const { getCardData} = useContext(FormContext);
   return (
     <>
       <motion.div
@@ -21,7 +21,13 @@ const Card = ({ index, title, feedback, rating }) => {
 
         <CardRating rating={rating} />
         <div className="card-all-btn">
-          <button onClick={() => navigate(`/feedback/${index}`)}>View</button>
+          <button className="card-btn" onClick={()=>getCardData(true, id, { title, feedback, rating })}>
+            Edit
+          </button>
+          
+          <NavLink to={`/feedback/${id}`} className="card-btn">
+            View
+          </NavLink>
         </div>
       </motion.div>
     </>
