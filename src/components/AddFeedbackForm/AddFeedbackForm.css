@@ -1,0 +1,81 @@
+.feedback-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 20px 50px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+}
+
+.form-input {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.feedback-container h1 {
+  text-align: center;
+}
+
+.feedback-title {
+  margin-top: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.feedback-textarea {
+  margin-top: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  resize: none;
+}
+
+.feedback-rating {
+  margin-top: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.custom-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+.confirmation-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.confirmation-container h2 {
+  color: #4caf50;
+}
+
+.confirmation-container p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5fpx;
+}
+
+.btn-submit {
+  border: 0;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+}
