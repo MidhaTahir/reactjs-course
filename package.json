@@ -1,25 +1,34 @@
 {
   "name": "react-course",
   "private": true,
+  "proxy": "http://localhost:8000",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server --watch ./src/database/db.json --port 8000",
+    "start": "concurrently \"npm run server\" \"npm run dev\""
   },
   "dependencies": {
+    "axios": "^1.4.0",
+    "concurrently": "^8.2.0",
     "formik": "^2.4.2",
     "framer-motion": "^10.12.16",
+    "json-server": "^0.17.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router": "^6.14.0",
+    "react-router-dom": "^6.14.0",
     "yup": "^1.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
+    "http-proxy-middleware": "^2.0.6",
     "vite": "^4.3.9"
   }
 }
