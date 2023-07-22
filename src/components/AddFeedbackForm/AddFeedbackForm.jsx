@@ -5,7 +5,7 @@ import "./AddFeedbackForm.css";
 import axios from "axios";
 
 const validationSchema = Yup.object().shape({
-  title: Yup.string().required("Title is required"),
+  title: Yup.string().required("* Required"),
   feedback: Yup.string()
     .required("Feedback is required")
     .min(5, "Feedback must have at least 5 characters"),
@@ -14,30 +14,36 @@ const validationSchema = Yup.object().shape({
     .min(1, "Rating must be at least 1"),
 });
 
+const initialValues = {
+  title: "",
+  feedback: "",
+  rating: "",
+};
+
+const handleSubmit = async (values, form) => {
+  // Handle form submission
+
+  // console.log(values)
+  // add new feedback
+
+  const dataToSend = {
+    ...values,
+    title: values.title.toUpperCase()
+  }
+  try {
+    const response = await axios.post(
+      "http://localhost:8000/feedbacks",
+      dataToSend
+    );
+    console.log("response", response);
+  } catch (error) {
+    console.log("error", error);
+  }
+
+  form.resetForm();
+};
+
 const FeedbackForm = () => {
-  const initialValues = {
-    title: "",
-    feedback: "",
-    rating: "",
-  };
-
-  const handleSubmit = async (values, { resetForm }) => {
-    // Handle form submission
-
-    //add new feedback
-    try {
-      const response = await axios.post(
-        "http://localhost:8000/feedbacks",
-        values
-      );
-      console.log("response", response);
-    } catch (error) {
-      console.log("error", error);
-    }
-
-    resetForm();
-  };
-
   return (
     <div className="feedback-container">
       <h1>Feedback Form</h1>
@@ -50,8 +56,8 @@ const FeedbackForm = () => {
           <div className="form-input">
             <label>Enter your Feedback Title:</label>
             <Field
-              name="title"
               className="feedback-title"
+              name="title"
               as="input"
               placeholder="Enter your Feedback Title"
             />

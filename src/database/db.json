@@ -1,7 +1,7 @@
 {
   "feedbacks": [
     {
-      "title": "Great service",
+      "title": "Great services",
       "feedback": "I had an excellent experience with their service. The staff was friendly and helpful.",
       "rating": "5",
       "id": 1
@@ -23,12 +23,6 @@
       "feedback": "The products I purchased from them were of high quality and met my expectations.",
       "rating": "5",
       "id": 4
-    },
-    {
-      "title": "Testing",
-      "feedback": "testing",
-      "rating": "5",
-      "id": 5
     }
   ]
 }

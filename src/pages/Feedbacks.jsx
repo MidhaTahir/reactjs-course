@@ -11,6 +11,7 @@ const Feedbacks = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get("http://localhost:8000/feedbacks");
+      console.log(response)
       setData(response?.data);
       setLoading(false);
     } catch (error) {
@@ -35,7 +36,8 @@ const Feedbacks = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, []); //first time only
+
 
   if (loading) {
     return <p>Loading...</p>;
